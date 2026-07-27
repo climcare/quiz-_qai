@@ -1,0 +1,655 @@
+/* =========================================================
+   QUIZ — QUALIDADE DO AR
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-light: #eff6ff;
+
+    --text: #172033;
+    --text-light: #667085;
+
+    --background: #f4f7fb;
+    --card: #ffffff;
+
+    --border: #dfe5ee;
+    --border-active: #2563eb;
+
+    --success: #16a34a;
+    --warning: #d97706;
+    --danger: #dc2626;
+
+    --radius: 18px;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.quiz-container {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.quiz-header {
+    padding: 12px 0 28px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-icon {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary);
+    color: white;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    border-radius: 12px;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-name {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.brand-subtitle {
+    font-size: 13px;
+    color: var(--text-light);
+}
+
+
+/* =========================================================
+   TELAS
+   ========================================================= */
+
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+}
+
+
+/* =========================================================
+   TELA INICIAL
+   ========================================================= */
+
+.intro-content {
+    background: var(--card);
+
+    padding: 48px;
+
+    border-radius: 24px;
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 20px 50px rgba(15, 23, 42, 0.06);
+}
+
+.intro-label,
+.result-label {
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    margin-bottom: 20px;
+
+    background: var(--primary-light);
+    color: var(--primary);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+
+    border-radius: 100px;
+}
+
+.intro-content h1 {
+    max-width: 580px;
+
+    margin-bottom: 18px;
+
+    font-size: 40px;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+}
+
+.intro-description {
+    max-width: 570px;
+
+    color: var(--text-light);
+
+    font-size: 17px;
+    line-height: 1.65;
+
+    margin-bottom: 22px;
+}
+
+.intro-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 30px;
+
+    color: var(--text-light);
+
+    font-size: 14px;
+}
+
+.disclaimer {
+    margin-top: 22px;
+
+    max-width: 520px;
+
+    font-size: 12px;
+    line-height: 1.6;
+
+    color: #98a2b3;
+}
+
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+
+button {
+    font-family: inherit;
+}
+
+.primary-button,
+.secondary-button {
+    min-height: 52px;
+
+    padding: 0 24px;
+
+    border-radius: 12px;
+
+    font-size: 15px;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.primary-button {
+    border: none;
+
+    background: var(--primary);
+    color: white;
+}
+
+.primary-button:hover:not(:disabled) {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.primary-button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.secondary-button {
+    background: white;
+    color: var(--text);
+
+    border: 1px solid var(--border);
+}
+
+.secondary-button:hover {
+    background: #f8fafc;
+}
+
+
+/* =========================================================
+   PROGRESSO
+   ========================================================= */
+
+.progress-area {
+    margin-bottom: 20px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 9px;
+
+    font-size: 13px;
+    color: var(--text-light);
+}
+
+.progress-track {
+    width: 100%;
+    height: 6px;
+
+    overflow: hidden;
+
+    background: #e5eaf1;
+
+    border-radius: 100px;
+}
+
+.progress-bar {
+    width: 14%;
+    height: 100%;
+
+    background: var(--primary);
+
+    border-radius: 100px;
+
+    transition: width 0.3s ease;
+}
+
+
+/* =========================================================
+   CARD DA PERGUNTA
+   ========================================================= */
+
+.question-card {
+    background: var(--card);
+
+    padding: 40px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 18px 45px rgba(15, 23, 42, 0.05);
+}
+
+.question-category {
+    display: inline-block;
+
+    margin-bottom: 14px;
+
+    color: var(--primary);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+}
+
+.question-card h2 {
+    max-width: 600px;
+
+    font-size: 28px;
+    line-height: 1.25;
+
+    letter-spacing: -0.02em;
+
+    margin-bottom: 10px;
+}
+
+.question-help {
+    margin-bottom: 24px;
+
+    font-size: 14px;
+
+    color: var(--text-light);
+}
+
+
+/* =========================================================
+   OPÇÕES
+   ========================================================= */
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-top: 24px;
+}
+
+.option {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 17px 18px;
+
+    background: white;
+
+    border: 1.5px solid var(--border);
+
+    border-radius: 13px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition:
+        border-color 0.15s ease,
+        background 0.15s ease,
+        transform 0.15s ease;
+}
+
+.option:hover {
+    border-color: #aebbd0;
+
+    transform: translateY(-1px);
+}
+
+.option.selected {
+    border-color: var(--border-active);
+
+    background: var(--primary-light);
+}
+
+.option-marker {
+    width: 21px;
+    height: 21px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid #cbd5e1;
+
+    border-radius: 50%;
+}
+
+.option.selected .option-marker {
+    border-color: var(--primary);
+}
+
+.option.selected .option-marker::after {
+    content: "";
+
+    width: 9px;
+    height: 9px;
+
+    background: var(--primary);
+
+    border-radius: 50%;
+}
+
+.option-text {
+    font-size: 15px;
+    font-weight: 550;
+
+    color: var(--text);
+}
+
+
+/* =========================================================
+   NAVEGAÇÃO
+   ========================================================= */
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-top: 32px;
+
+    padding-top: 24px;
+
+    border-top: 1px solid #edf0f4;
+}
+
+.navigation .primary-button {
+    margin-left: auto;
+}
+
+
+/* =========================================================
+   RESULTADO
+   ========================================================= */
+
+.result-card {
+    background: var(--card);
+
+    padding: 48px;
+
+    border-radius: 24px;
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 20px 50px rgba(15, 23, 42, 0.06);
+}
+
+.result-indicator {
+    width: 130px;
+    height: 130px;
+
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+
+    margin: 4px 0 28px;
+
+    padding-top: 35px;
+
+    background: var(--primary-light);
+
+    border-radius: 50%;
+}
+
+.result-indicator span {
+    font-size: 44px;
+    font-weight: 750;
+
+    line-height: 1;
+}
+
+.result-indicator small {
+    margin-left: 3px;
+
+    font-size: 14px;
+
+    color: var(--text-light);
+}
+
+.result-card h2 {
+    margin-bottom: 12px;
+
+    font-size: 30px;
+
+    letter-spacing: -0.02em;
+}
+
+#result-description {
+    max-width: 580px;
+
+    color: var(--text-light);
+
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   RESULTADO — CLASSIFICAÇÕES
+   ========================================================= */
+
+.result-indicator.low {
+    background: #ecfdf3;
+    color: var(--success);
+}
+
+.result-indicator.medium {
+    background: #fff7ed;
+    color: var(--warning);
+}
+
+.result-indicator.high {
+    background: #fef2f2;
+    color: var(--danger);
+}
+
+
+/* =========================================================
+   RECOMENDAÇÃO
+   ========================================================= */
+
+.result-message {
+    margin-top: 28px;
+
+    padding: 22px;
+
+    background: #f8fafc;
+
+    border-radius: 14px;
+}
+
+.result-message h3 {
+    margin-bottom: 8px;
+
+    font-size: 15px;
+}
+
+.result-message p {
+    color: var(--text-light);
+
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.result-actions {
+    margin-top: 28px;
+}
+
+.result-disclaimer {
+    margin-top: 26px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #edf0f4;
+
+    color: #98a2b3;
+
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .quiz-container {
+        padding: 16px;
+    }
+
+    .quiz-header {
+        padding-bottom: 18px;
+    }
+
+    .intro-content,
+    .question-card,
+    .result-card {
+        padding: 28px 22px;
+
+        border-radius: 18px;
+    }
+
+    .intro-content h1 {
+        font-size: 31px;
+    }
+
+    .intro-description {
+        font-size: 15px;
+    }
+
+    .question-card h2 {
+        font-size: 23px;
+    }
+
+    .option {
+        padding: 16px;
+    }
+
+    .navigation {
+        flex-direction: column-reverse;
+    }
+
+    .navigation button {
+        width: 100%;
+    }
+
+    .result-indicator {
+        width: 110px;
+        height: 110px;
+
+        padding-top: 29px;
+    }
+
+    .result-indicator span {
+        font-size: 38px;
+    }
+
+}
