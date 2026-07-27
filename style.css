@@ -596,60 +596,249 @@ button {
 
 
 /* =========================================================
-   CELULAR
+   RESPONSIVO — CELULAR
    ========================================================= */
 
 @media (max-width: 600px) {
 
-    .quiz-container {
-        padding: 16px;
+    html,
+    body {
+        width: 100%;
+        min-height: 100%;
+        overflow-x: hidden;
     }
 
-    .quiz-header {
-        padding-bottom: 18px;
+    body {
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
     }
+
+
+    /* CONTAINER */
+
+    .quiz-container {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+
+        padding: 14px;
+    }
+
+
+    /* HEADER */
+
+    .quiz-header {
+        padding: 8px 2px 16px;
+    }
+
+    .brand {
+        gap: 10px;
+    }
+
+    .brand-icon {
+        width: 38px;
+        height: 38px;
+
+        font-size: 17px;
+
+        border-radius: 10px;
+    }
+
+    .brand-name {
+        font-size: 14px;
+    }
+
+    .brand-subtitle {
+        font-size: 11px;
+    }
+
+
+    /* CARDS */
 
     .intro-content,
     .question-card,
     .result-card {
-        padding: 28px 22px;
+
+        width: 100%;
+
+        padding: 26px 20px;
 
         border-radius: 18px;
+
+        background: rgba(255, 255, 255, 0.97);
+
+        box-shadow:
+            0 12px 35px rgba(15, 23, 42, 0.12);
+    }
+
+
+    /* TELA INICIAL */
+
+    .intro-label,
+    .result-label {
+        margin-bottom: 16px;
+
+        font-size: 10px;
     }
 
     .intro-content h1 {
-        font-size: 31px;
+        font-size: 29px;
+
+        line-height: 1.12;
+
+        margin-bottom: 16px;
     }
 
     .intro-description {
         font-size: 15px;
+
+        line-height: 1.55;
+
+        margin-bottom: 18px;
+    }
+
+    .intro-info {
+        flex-wrap: wrap;
+
+        margin-bottom: 24px;
+
+        font-size: 13px;
+    }
+
+
+    /* BOTÃO PRINCIPAL */
+
+    .intro-content > .primary-button {
+        width: 100%;
+    }
+
+
+    /* PROGRESSO */
+
+    .progress-area {
+        padding: 0 2px;
+
+        margin-bottom: 14px;
+    }
+
+    .progress-info {
+        font-size: 12px;
+    }
+
+
+    /* PERGUNTAS */
+
+    .question-category {
+        font-size: 10px;
+
+        margin-bottom: 10px;
     }
 
     .question-card h2 {
         font-size: 23px;
+
+        line-height: 1.25;
+
+        margin-bottom: 10px;
+    }
+
+    .question-help {
+        font-size: 13px;
+
+        line-height: 1.5;
+
+        margin-bottom: 18px;
+    }
+
+
+    /* RESPOSTAS */
+
+    .options-container {
+        gap: 10px;
+
+        margin-top: 18px;
     }
 
     .option {
-        padding: 16px;
+        min-height: 58px;
+
+        padding: 15px;
+
+        border-radius: 12px;
     }
+
+    .option-marker {
+        width: 22px;
+        height: 22px;
+    }
+
+    .option-text {
+        font-size: 14px;
+
+        line-height: 1.35;
+    }
+
+
+    /* NAVEGAÇÃO */
 
     .navigation {
         flex-direction: column-reverse;
+
+        gap: 10px;
+
+        margin-top: 24px;
+
+        padding-top: 20px;
     }
 
     .navigation button {
         width: 100%;
+
+        min-height: 52px;
     }
 
-    .result-indicator {
-        width: 110px;
-        height: 110px;
 
-        padding-top: 29px;
+    /* RESULTADO */
+
+    .result-indicator {
+        width: 105px;
+        height: 105px;
+
+        padding-top: 27px;
+
+        margin-bottom: 22px;
     }
 
     .result-indicator span {
-        font-size: 38px;
+        font-size: 36px;
+    }
+
+    .result-card h2 {
+        font-size: 25px;
+    }
+
+    #result-description {
+        font-size: 14px;
+    }
+
+    .result-message {
+        padding: 18px;
+    }
+
+    .result-actions button {
+        width: 100%;
+    }
+
+
+    /* TEXTOS PEQUENOS */
+
+    .disclaimer,
+    .result-disclaimer {
+        font-size: 10px;
+
+        line-height: 1.5;
     }
 
 }
