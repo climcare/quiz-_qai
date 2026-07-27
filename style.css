@@ -50,7 +50,7 @@ body {
             rgba(238, 245, 252, 0.20),
             rgba(238, 245, 252, 0.20)
         ),
-        url("quiz_qai/foto.png");
+        url("./foto.png");
 
     background-size: cover;
     background-position: center center;
@@ -659,7 +659,7 @@ button {
             rgba(238, 245, 252, 0.30),
             rgba(238, 245, 252, 0.30)
         ),
-        url("assets/1.png");
+        url("./foto.png");
 
     background-size: cover;
     background-position: center center;
