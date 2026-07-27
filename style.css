@@ -654,26 +654,58 @@ button {
 
     html,
     body {
-        width: 100%;
-        min-height: 100%;
-        overflow-x: hidden;
-    }
-   body {
+    background-image:
+        linear-gradient(
+            rgba(238, 245, 252, 0.30),
+            rgba(238, 245, 252, 0.30)
+        ),
+        url("assets/1.png");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     background-attachment: scroll;
 }
 
-   body::after {
-       width: 400px;
-       height: 400px;
-
-       right: -230px;
-       top: 10%;
+.quiz-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 14px;
 }
-    body {
-        background-attachment: scroll;
-        background-position: center center;
-        background-size: cover;
-    }
+
+.intro-content,
+.question-card,
+.result-card {
+    width: 100%;
+    padding: 26px 20px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border-radius: 18px;
+}
+
+.intro-content h1 {
+    font-size: 29px;
+    line-height: 1.15;
+}
+
+.question-card h2 {
+    font-size: 23px;
+    line-height: 1.25;
+}
+
+.option {
+    min-height: 58px;
+    padding: 15px;
+}
+
+.navigation {
+    flex-direction: column-reverse;
+}
+
+.navigation button {
+    width: 100%;
+}
 
 
     /* CONTAINER */
