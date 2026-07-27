@@ -1,1 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
 
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Quiz de percepção da qualidade do ar em ambientes internos"
+    >
+
+    <title>Quiz | Qualidade do Ar</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="quiz-container">
+
+        <!-- =========================================
+             CABEÇALHO
+        ========================================== -->
+        <header class="quiz-header">
+
+            <div class="brand">
+                <div class="brand-icon">A</div>
+
+                <div class="brand-text">
+                    <span class="brand-name">Qualidade do Ar</span>
+                    <span class="brand-subtitle">
+                        Avaliação do ambiente interno
+                    </span>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- =========================================
+             TELA INICIAL
+        ========================================== -->
+        <section id="start-screen" class="screen active">
+
+            <div class="intro-content">
+
+                <span class="intro-label">
+                    Avaliação rápida
+                </span>
+
+                <h1>
+                    Como está o ambiente
+                    onde você passa o dia?
+                </h1>
+
+                <p class="intro-description">
+                    Responda algumas perguntas rápidas sobre o ambiente
+                    e sobre como você se sente enquanto permanece nele.
+                </p>
+
+                <div class="intro-info">
+                    <span>7 perguntas</span>
+                    <span>•</span>
+                    <span>menos de 2 minutos</span>
+                </div>
+
+                <button
+                    id="start-button"
+                    class="primary-button"
+                    type="button"
+                >
+                    Iniciar avaliação
+                </button>
+
+                <p class="disclaimer">
+                    Esta avaliação é informativa e não substitui
+                    uma avaliação técnica da qualidade do ar.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             TELA DAS PERGUNTAS
+        ========================================== -->
+        <section id="quiz-screen" class="screen">
+
+            <div class="progress-area">
+
+                <div class="progress-info">
+                    <span id="question-counter">
+                        Pergunta 1 de 7
+                    </span>
+
+                    <span id="progress-percent">
+                        14%
+                    </span>
+                </div>
+
+                <div class="progress-track">
+                    <div
+                        id="progress-bar"
+                        class="progress-bar"
+                    ></div>
+                </div>
+
+            </div>
+
+
+            <div class="question-card">
+
+                <span
+                    id="question-category"
+                    class="question-category"
+                >
+                    Ambiente
+                </span>
+
+                <h2 id="question-text">
+                    Qual ambiente você ocupa?
+                </h2>
+
+                <p
+                    id="question-help"
+                    class="question-help"
+                ></p>
+
+
+                <!-- As opções serão criadas pelo JavaScript -->
+                <div
+                    id="options-container"
+                    class="options-container"
+                ></div>
+
+
+                <div class="navigation">
+
+                    <button
+                        id="back-button"
+                        class="secondary-button"
+                        type="button"
+                    >
+                        Voltar
+                    </button>
+
+                    <button
+                        id="next-button"
+                        class="primary-button"
+                        type="button"
+                        disabled
+                    >
+                        Continuar
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             TELA DE RESULTADO
+        ========================================== -->
+        <section id="result-screen" class="screen">
+
+            <div class="result-card">
+
+                <span class="result-label">
+                    Resultado da avaliação
+                </span>
+
+                <div
+                    id="result-indicator"
+                    class="result-indicator"
+                >
+                    <span id="result-score">0</span>
+                    <small>/ 15</small>
+                </div>
+
+                <h2 id="result-title">
+                    Resultado
+                </h2>
+
+                <p id="result-description">
+                    Resultado da sua avaliação.
+                </p>
+
+
+                <div class="result-message">
+
+                    <h3>
+                        O que isso significa?
+                    </h3>
+
+                    <p id="result-recommendation">
+                        Analisando suas respostas...
+                    </p>
+
+                </div>
+
+
+                <div class="result-actions">
+
+                    <button
+                        id="restart-button"
+                        class="secondary-button"
+                        type="button"
+                    >
+                        Refazer avaliação
+                    </button>
+
+                </div>
+
+
+                <p class="result-disclaimer">
+                    As respostas representam sua percepção do ambiente.
+                    O resultado não constitui diagnóstico médico nem
+                    substitui medições instrumentais da qualidade do ar.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript do Quiz -->
+    <script src="script.js"></script>
+
+</body>
+</html>
