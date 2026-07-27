@@ -1,7 +1,8 @@
 /* =========================================================
    QUIZ — PERCEPÇÃO DA QUALIDADE DO AR
    ========================================================= */
-
+const GOOGLE_SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbzzmTrOfvubJxb9UFFRBElythVeAfSzGm9skwzRfCRoyA-rOVZoh_g9WoVVkeKd7fZx/exec";
 
 /* =========================================================
    PERGUNTAS
@@ -529,10 +530,51 @@ function finalizarQuiz() {
         dados
     );
 
+   /* ENVIA PARA O GOOGLE SHEETS */
+
+enviarResultado(dados);
 
     mostrarResultado(
         pontos
     );
+
+}
+
+/* =========================================================
+   ENVIAR RESULTADO PARA GOOGLE SHEETS
+   ========================================================= */
+
+async function enviarResultado(dados) {
+
+    try {
+
+        await fetch(
+            GOOGLE_SCRIPT_URL,
+            {
+                method: "POST",
+
+                mode: "no-cors",
+
+                headers: {
+                    "Content-Type": "text/plain;charset=utf-8"
+                },
+
+                body: JSON.stringify(dados)
+            }
+        );
+
+        console.log(
+            "Resultado enviado para o Google Sheets."
+        );
+
+    } catch (erro) {
+
+        console.error(
+            "Erro ao enviar resultado:",
+            erro
+        );
+
+    }
 
 }
 
