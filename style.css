@@ -44,11 +44,99 @@ body {
         Arial,
         sans-serif;
 
-    background: var(--background);
     color: var(--text);
     line-height: 1.5;
+    min-height: 100vh;
+
+    /* Fundo QAI */
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255, 255, 255, 0.95) 0%,
+            rgba(255, 255, 255, 0) 32%
+        ),
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(125, 211, 252, 0.35) 0%,
+            rgba(125, 211, 252, 0) 35%
+        ),
+        radial-gradient(
+            circle at 75% 85%,
+            rgba(167, 243, 208, 0.30) 0%,
+            rgba(167, 243, 208, 0) 35%
+        ),
+        linear-gradient(
+            135deg,
+            #eaf4fb 0%,
+            #f4f9fc 40%,
+            #edf8f5 70%,
+            #e8f3fa 100%
+        );
+
+    background-attachment: fixed;
+    background-size: cover;
 }
 
+/* =========================================================
+   EFEITO VISUAL — FLUXO DE AR
+   ========================================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    top: -20%;
+    left: -10%;
+
+    width: 120%;
+    height: 120%;
+
+    pointer-events: none;
+    z-index: -1;
+
+    background:
+        radial-gradient(
+            ellipse at 20% 40%,
+            rgba(255, 255, 255, 0.75) 0%,
+            rgba(255, 255, 255, 0) 35%
+        ),
+        radial-gradient(
+            ellipse at 80% 60%,
+            rgba(96, 165, 250, 0.12) 0%,
+            rgba(96, 165, 250, 0) 40%
+        );
+
+    filter: blur(10px);
+}
+
+
+/* LINHAS SUAVES REPRESENTANDO MOVIMENTO DO AR */
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 700px;
+    height: 700px;
+
+    right: -250px;
+    top: 5%;
+
+    pointer-events: none;
+    z-index: -1;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(59, 130, 246, 0.10);
+
+    box-shadow:
+        0 0 0 70px rgba(59, 130, 246, 0.025),
+        0 0 0 140px rgba(59, 130, 246, 0.02),
+        0 0 0 210px rgba(16, 185, 129, 0.015);
+}
 
 /* =========================================================
    CONTAINER
@@ -127,36 +215,18 @@ body {
    ========================================================= */
 
 .intro-content {
-    background: var(--card);
+    background: rgba(255, 255, 255, 0.94);
 
-    padding: 48px;
-
-    border-radius: 24px;
-
-    border: 1px solid var(--border);
-
-    box-shadow:
-        0 20px 50px rgba(15, 23, 42, 0.06);
+backdrop-filter: blur(14px);
+-webkit-backdrop-filter: blur(14px);
 }
 
 .intro-label,
 .result-label {
-    display: inline-block;
+    background: rgba(255, 255, 255, 0.94);
 
-    padding: 6px 12px;
-
-    margin-bottom: 20px;
-
-    background: var(--primary-light);
-    color: var(--primary);
-
-    font-size: 12px;
-    font-weight: 700;
-
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-
-    border-radius: 100px;
+backdrop-filter: blur(14px);
+-webkit-backdrop-filter: blur(14px);
 }
 
 .intro-content h1 {
@@ -607,7 +677,17 @@ button {
         min-height: 100%;
         overflow-x: hidden;
     }
+   body {
+    background-attachment: scroll;
+}
 
+   body::after {
+       width: 400px;
+       height: 400px;
+
+       right: -230px;
+       top: 10%;
+}
     body {
         background-attachment: scroll;
         background-position: center center;
