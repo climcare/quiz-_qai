@@ -34,113 +34,47 @@
             class="screen active"
         >
 
-            <div class="hero-start">
-
-                <!-- Camada para garantir leitura do texto -->
-                <div
-                    class="hero-overlay"
-                    aria-hidden="true"
-                ></div>
+            <div class="start-card">
 
 
-                <!-- CONTEÚDO SOBRE A IMAGEM -->
-                <div class="hero-content">
+                <!-- HERO -->
+
+                <div class="hero">
+
+                    <img
+                        src="./hero.png"
+                        alt="Qualidade do Ar - Avaliação do ambiente interno"
+                        class="hero-image"
+                    >
+
+                </div>
 
 
-                    <!-- MARCA -->
+                <!-- INFORMAÇÕES E BOTÃO -->
 
-                    <div class="hero-brand">
-
-                        <div
-                            class="brand-icon"
-                            aria-hidden="true"
-                        >
-                            A
-                        </div>
-
-
-                        <div class="brand-text">
-
-                            <span class="brand-name">
-                                Qualidade do Ar
-                            </span>
-
-                            <span class="brand-subtitle">
-                                Avaliação do ambiente interno
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- ETIQUETA -->
-
-                    <span class="hero-label">
-                        Avaliação rápida
-                    </span>
-
-
-                    <!-- TÍTULO -->
-
-                    <h1>
-                        Como está o ambiente onde você passa o dia?
-                    </h1>
-
-
-                    <!-- INTRODUÇÃO -->
-
-                    <p class="hero-description">
-                        Responda algumas perguntas rápidas sobre o ambiente
-                        e sobre como você se sente enquanto permanece nele.
-                    </p>
-
-
-                    <!-- INFORMAÇÕES -->
+                <div class="start-actions">
 
                     <div class="intro-info">
 
                         <span class="info-item">
-
-                            <span
-                                class="info-icon"
-                                aria-hidden="true"
-                            >
-                                ✓
-                            </span>
-
-                            9 perguntas
-
+                            <span class="info-icon">✓</span>
+                            7 perguntas
                         </span>
 
-
                         <span class="info-item">
-
-                            <span
-                                class="info-icon"
-                                aria-hidden="true"
-                            >
-                                ◷
-                            </span>
-
+                            <span class="info-icon">◷</span>
                             menos de 2 minutos
-
                         </span>
 
                     </div>
 
-
-                    <!-- BOTÃO -->
 
                     <button
                         id="start-button"
                         class="primary-button start-button"
                         type="button"
                     >
-
-                        <span>
-                            Iniciar avaliação
-                        </span>
+                        <span>Iniciar avaliação</span>
 
                         <span
                             class="button-arrow"
@@ -148,17 +82,12 @@
                         >
                             →
                         </span>
-
                     </button>
 
 
-                    <!-- AVISO -->
-
                     <p class="disclaimer">
-
                         Esta avaliação é informativa e não substitui
                         uma avaliação técnica da qualidade do ar.
-
                     </p>
 
                 </div>
@@ -186,11 +115,11 @@
                 <div class="progress-info">
 
                     <span id="question-counter">
-                        Pergunta 1 de 9
+                        Pergunta 1 de 7
                     </span>
 
                     <span id="progress-percent">
-                        11%
+                        14%
                     </span>
 
                 </div>
@@ -232,6 +161,7 @@
                 ></p>
 
 
+
                 <!--
                     O JavaScript cria as respostas aqui
                 -->
@@ -240,6 +170,7 @@
                     id="options-container"
                     class="options-container"
                 ></div>
+
 
 
                 <!-- NAVEGAÇÃO -->
@@ -289,6 +220,7 @@
                 </span>
 
 
+
                 <div
                     id="result-indicator"
                     class="result-indicator"
@@ -305,6 +237,7 @@
                 </div>
 
 
+
                 <h2 id="result-title">
                     Resultado
                 </h2>
@@ -313,6 +246,7 @@
                 <p id="result-description">
                     Resultado da sua avaliação.
                 </p>
+
 
 
                 <div class="result-message">
@@ -328,6 +262,7 @@
                 </div>
 
 
+
                 <div class="result-actions">
 
                     <button
@@ -339,6 +274,7 @@
                     </button>
 
                 </div>
+
 
 
                 <p class="result-disclaimer">
@@ -359,7 +295,8 @@
 
 
     <!--
-        Perguntas, pontuação e envio ao Google Sheets
+        NÃO ALTERAR:
+        mantém perguntas, pontuação e Google Sheets
     -->
 
     <script src="./script.js"></script>
