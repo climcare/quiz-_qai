@@ -112,7 +112,69 @@ const perguntas = [
             { texto: "Às vezes", valor: 1 },
             { texto: "Frequentemente", valor: 3 }
         ]
-    }
+    },
+
+   {
+    id: "intencao_compra",
+    categoria: "Sobre a solução",
+    pergunta: "Você contrataria um serviço de monitoramento da qualidade do ar para o seu ambiente?",
+    ajuda: "Queremos entender seu interesse em uma solução contínua de monitoramento.",
+    pontua: false,
+
+    opcoes: [
+        {
+            texto: "Sim",
+            valor: "sim"
+        },
+        {
+            texto: "Talvez, dependendo do valor",
+            valor: "talvez_valor"
+        },
+        {
+            texto: "Talvez, dependendo dos benefícios oferecidos",
+            valor: "talvez_beneficios"
+        },
+        {
+            texto: "Não",
+            valor: "nao"
+        },
+        {
+            texto: "Ainda não sei",
+            valor: "nao_sei"
+        }
+    ]
+   },
+
+{
+    id: "percepcao_solucao",
+    categoria: "Sobre a solução",
+    pergunta: "O que você acha de um sistema que monitora e analisa a qualidade do ar do ambiente e fornece informações para auxiliar na tomada de decisões e na melhoria da qualidade do ar?",
+    ajuda: "Considere a utilidade desse tipo de solução para o ambiente onde você permanece.",
+    pontua: false,
+
+    opcoes: [
+        {
+            texto: "Muito interessante",
+            valor: "muito_interessante"
+        },
+        {
+            texto: "Interessante",
+            valor: "interessante"
+        },
+        {
+            texto: "Pouco interessante",
+            valor: "pouco_interessante"
+        },
+        {
+            texto: "Não vejo necessidade",
+            valor: "sem_necessidade"
+        },
+        {
+            texto: "Gostaria de conhecer melhor",
+            valor: "quero_conhecer"
+        }
+    ]
+}
 
 ];
 
@@ -499,30 +561,36 @@ function finalizarQuiz() {
 
     const dados = {
 
-        data: new Date().toISOString(),
+    data: new Date().toISOString(),
 
-        ambiente: ambiente,
+    ambiente: ambiente,
 
-        area: area,
+    area: area,
 
-        abafado:
-            respostas.abafado?.valor ?? null,
+    abafado:
+        respostas.abafado?.valor ?? null,
 
-        cansaco:
-            respostas.cansaco?.valor ?? null,
+    cansaco:
+        respostas.cansaco?.valor ?? null,
 
-        concentracao:
-            respostas.concentracao?.valor ?? null,
+    concentracao:
+        respostas.concentracao?.valor ?? null,
 
-        mofo:
-            respostas.mofo?.valor ?? null,
+    mofo:
+        respostas.mofo?.valor ?? null,
 
-        irritacao:
-            respostas.irritacao?.valor ?? null,
+    irritacao:
+        respostas.irritacao?.valor ?? null,
 
-        pontos: pontos
+    pontos: pontos,
 
-    };
+    intencao_compra:
+        respostas.intencao_compra?.texto ?? "",
+
+    percepcao_solucao:
+        respostas.percepcao_solucao?.texto ?? ""
+
+};
 
 
     console.log(
