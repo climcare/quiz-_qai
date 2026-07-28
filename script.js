@@ -360,14 +360,6 @@ const perguntas = [
             },
 
             {
-                texto:
-                    "Talvez, dependendo dos benefícios oferecidos",
-
-                valor:
-                    "talvez_beneficios"
-            },
-
-            {
                 texto: "Não",
                 valor: "nao"
             },
